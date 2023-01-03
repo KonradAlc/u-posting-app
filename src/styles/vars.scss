@@ -1,0 +1,76 @@
+//Main fonts
+$main-font: "Inter", sans-serif;
+$font-poppins: "Poppins", sans-serif;
+
+// Line height
+$line-height-1: 0.938rem; //15px
+$line-height-2: 1.063rem; //17px
+$line-height-3: 1.125rem; //18px
+$line-height-4: 1.188rem; //19px
+$line-height-5: 1.25rem; //20px
+$line-height-6: 1.5rem; //24px
+$line-height-7: 1.813em; //29px
+$line-height-8: 2.75em; //44px
+
+// Letter spicing
+$letter-spacing-1: -0.015em;
+$letter-spacing-2: -0.005em;
+$letter-spacing-3: 0.0015em;
+$letter-spacing-4: 0.0025em;
+$letter-spacing-5: 0.005em;
+$letter-spacing-6: 0.0125em;
+
+// Font sizes
+$font-size-xxxl: 2.25rem; //36px;
+$font-size-xxl: 1.5rem; //24px;
+$font-size-xl: 1.25rem; //20px;
+$font-size-l: 1.125rem; //18px;
+$font-size-m: 1rem; //16px;
+$font-size-ms: 0.938rem; //15px;
+$font-size-s: 0.875rem; //14px;
+$font-size-xs: 0.75rem; //12px;
+$font-size-xxs: 0.625rem; //10px;
+
+// Spacing
+$spacing-1: 0.313rem; //5px;
+$spacing-2: 0.625rem; //10px;
+$spacing-3: 0.938rem; //15px;
+$spacing-4: 0.938rem; //15px;
+$spacing-5: 1.25rem; //20px;
+$spacing-6: 1.563rem; //25px;
+$spacing-7: 1.875rem; //30px;
+$spacing-8: 2.5rem; //40px;
+$spacing-9: 3.125rem; //50px;
+$spacing-10: 3.438rem; //55px;
+$spacing-11: 3.75rem; //60px;
+$spacing-12: 4.375rem; //70px;
+$spacing-13: 5rem; //80px;
+$spacing-14: 5.625rem; //90px;
+
+// Border radius
+$radius-l: 13px;
+$radius-m: 10px;
+$radius-s: 6px;
+
+// Font weights
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-semiBold: 600;
+$font-bold: 700;
+$font-extraBold: 800;
+
+// Box shadows
+$shadow-main: 3px 3px 15px 0 rgba(0, 0, 0, 0.05);
+$shadow-input-focus: 0 0 0 2px rgba(49, 121, 255, 0.4);
+$shadow-input-error: 0 0 0 2px rgba(239, 68, 68, 0.4);
+
+// Constants sizes
+$nav-height: 82px;
+$mob-nav-height: 70px;
+$sidebar-width: 245px;
+$offset-top-navbar: 122px;
+$public-pages-top-margin: 54px;
+$topbar-notification-height: 44px;
+$topbar-notification-transition-timing-function: linear;
+$topbar-notification-transition-duration: 0.1s;

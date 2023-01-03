@@ -1,0 +1,34 @@
+@import 'src/styles';
+
+.btn {
+  cursor: pointer;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  transition: background-color 0.3s, transform 0.3s;
+
+  &:hover {
+    background-color: lighten($gray-lightest-color, 3%);
+  }
+
+  &:active {
+    background-color: $gray-lightest-color;
+  }
+
+  &__open {
+    transform: rotate(0deg);
+  }
+
+  &__darkBackground {
+    background-color: lighten($gray-lightest-color, 3%);
+  }
+}
+
+.icon {
+  pointer-events: none;
+}

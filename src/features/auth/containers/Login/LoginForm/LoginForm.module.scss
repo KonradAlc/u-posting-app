@@ -1,0 +1,11 @@
+@import "src/styles";
+
+.container {
+  max-width: 500px;
+  @include element-flex(column);
+  gap: $spacing-6;
+}
+
+.button {
+  align-self: center;
+}

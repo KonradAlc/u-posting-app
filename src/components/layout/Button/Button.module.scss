@@ -1,0 +1,64 @@
+@import "src/styles";
+
+.button {
+  @include element-flex(row, center, center);
+  column-gap: 15px;
+  text-align: center;
+  padding: 16px 22px;
+  background-color: $primary-color;
+  border-radius: $radius-m;
+  font-size: $font-size-m;
+  font-weight: $font-medium;
+  color: $white-color;
+  cursor: pointer;
+  z-index: 1;
+  transition: background-color 0.2s, color 0.2s;
+  position: relative;
+
+  &:hover,
+  &:active {
+    background-color: $primary-dark-color;
+  }
+}
+
+.disabled {
+  background-color: $gray-light-color;
+  //color: $gray-color;
+  cursor: not-allowed;
+  border-color: transparent;
+
+  &:hover,
+  &:active {
+    background-color: $gray-light-color;
+  }
+}
+
+.loader {
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+}
+
+.isLoading {
+}
+
+.wrapper {
+  @include element-flex(row, center, center);
+  gap: 15px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}

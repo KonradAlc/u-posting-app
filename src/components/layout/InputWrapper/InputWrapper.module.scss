@@ -1,0 +1,45 @@
+@import 'src/styles';
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.label {
+  display: block;
+  padding-bottom: 5px;
+  font-size: $font-size-m;
+  //color: $gray-color;
+}
+
+.visuallyHidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.required {
+  //color: $danger-color;
+}
+
+.descriptionField {
+  padding-bottom: 6px;
+  //font-size: $font-size-s;
+  color: #ccc;
+}
+
+.errorMessage {
+  margin-top: 5px;
+  //color: $danger-color;
+  //font-size: $font-size-xs;
+  animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+  //@include keyframe-fadeIn;
+}

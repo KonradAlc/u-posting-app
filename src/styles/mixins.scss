@@ -1,0 +1,99 @@
+@import "vars";
+@import "colors";
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content;
+  }
+  :-moz-placeholder {
+    @content;
+  }
+  ::-moz-placeholder {
+    @content;
+  }
+  :-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin appearance($value) {
+  -webkit-appearance: $value;
+  -moz-appearance: $value;
+  appearance: $value;
+}
+
+@mixin limit-lines($line-s-amount) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line-s-amount; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+@mixin trimText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin element-flex($direction, $justify: "flex-start", $align: "flex-start") {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: unquote($justify);
+  align-items: unquote($align);
+}
+
+@mixin title1 {
+  font-weight: $font-medium;
+  font-size: $font-size-m;
+  line-height: $line-height-4;
+  letter-spacing: $letter-spacing-3;
+  color: $textWhite;
+}
+@mixin title2 {
+  font-weight: $font-semiBold;
+  font-size: $font-size-s;
+  line-height: $line-height-2;
+  letter-spacing: $letter-spacing-3;
+  color: $textWhite;
+}
+@mixin body1 {
+  font-weight: $font-regular;
+  font-size: $font-size-m;
+  line-height: $line-height-4;
+  letter-spacing: $letter-spacing-5;
+  color: $textWhite;
+}
+@mixin body2 {
+  font-weight: $font-regular;
+  font-size: $font-size-s;
+  line-height: $line-height-2;
+  letter-spacing: $letter-spacing-4;
+  color: $textWhite;
+}
+@mixin button {
+  font-weight: $font-medium;
+  font-size: $font-size-s;
+  line-height: $line-height-2;
+  letter-spacing: $letter-spacing-6;
+  color: $textWhite;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+}
+@mixin helper {
+  font-weight: $font-medium;
+  font-size: $font-size-xs;
+  line-height: $line-height-1;
+  letter-spacing: $letter-spacing-4;
+  color: $textWhite;
+}
+@mixin overline {
+  font-weight: $font-medium;
+  font-size: $font-size-xs;
+  line-height: $line-height-1;
+  letter-spacing: $letter-spacing-4;
+  color: $textWhite;
+  text-transform: uppercase;
+}

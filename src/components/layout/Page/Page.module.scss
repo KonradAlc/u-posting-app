@@ -1,0 +1,16 @@
+@import "src/styles";
+
+.container {
+  width: 100%;
+  padding-left: $sidebar-width;
+  @include element-flex(column);
+}
+
+.inner {
+  width: 100%;
+  padding: $spacing-8;
+}
+
+.page {
+  width: 100%;
+}

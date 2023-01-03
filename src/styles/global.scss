@@ -1,0 +1,53 @@
+@import 'vars';
+@import 'colors';
+
+h1 {
+  font-weight: $font-bold;
+  font-size: $font-size-xxxl;
+  line-height: $line-height-8;
+  letter-spacing: $letter-spacing-1;
+}
+
+h2 {
+  font-weight: $font-bold;
+  font-size: $font-size-xxl;
+  line-height: $line-height-7;
+  letter-spacing: $letter-spacing-2;
+}
+
+h3 {
+  font-weight: $font-semiBold;
+  font-size: $font-size-xl;
+  line-height: $line-height-6;
+}
+h4 {
+  font-weight: $font-semiBold;
+  font-size: $font-size-m;
+  line-height: $line-height-4;
+  letter-spacing: $letter-spacing-4;
+}
+h5 {
+  font-weight: $font-medium;
+  font-size: $font-size-ms;
+  line-height: $line-height-3;
+}
+h6 {
+  font-weight: $font-medium;
+  font-size: $font-size-s;
+  line-height: $line-height-2;
+  letter-spacing: $letter-spacing-3;
+}
+
+body {
+  font-family: $main-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: $textDark;
+}

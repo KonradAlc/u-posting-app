@@ -1,10 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+import AppRouter from "./app/AppRouter";
+import store from "./store";
+
+import "./styles/reset.scss";
+
+ReactDOM.createRoot(document.querySelector("#root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <Provider store={store}>
+      <AppRouter />
+    </Provider>
+  </React.StrictMode>
+);

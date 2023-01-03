@@ -1,0 +1,44 @@
+@import "../../../styles";
+
+.modal {
+  margin: 0 $spacing-5;
+  border-radius: $radius-l;
+  box-shadow: $shadow-main;
+  background-color: white;
+  padding: $spacing-6;
+  width: 100%;
+  max-width: 505px;
+  overflow: auto;
+  max-height: 80vh;
+  position: relative;
+}
+
+.modalHeader {
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+}
+
+.modalBody {
+  line-height: 1.38;
+}
+
+.modalTitle {
+  width: 100%;
+  //color: $dark-color;
+  //font-weight: $font-semiBold;
+  font-size: $font-size-m;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(black, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,57 @@
+@import 'src/styles';
+
+.wrapperArea {
+  position: relative;
+}
+
+.textarea {
+  padding: 16px 20px;
+  //background-color: $white-color;
+  min-height: 180px;
+  max-height: 180px;
+  //color: $dark-color;
+  font-size: $font-size-m;
+  width: 100%;
+  //font-family: $main-font;
+  //border-radius: $radius-m;
+  //border: 1px solid $input-border-color;
+  resize: vertical;
+  transition: border 0.1s, border-color 0.1s;
+
+  &:hover {
+    cursor: text;
+  }
+
+  &:focus {
+    //border-color: $orange-color;
+    //box-shadow: $shadow-input-focus;
+  }
+
+  &:disabled {
+    //color: lighten($dark-color, 50%);
+    cursor: not-allowed;
+  }
+
+  &__error {
+    //border-color: $danger-color;
+    //box-shadow: $invalid-input-shadow;
+  }
+}
+
+@include placeholder {
+  font-size: $font-size-m;
+  //color: $gray-color;
+}
+
+.error {
+  //border-color: $danger-color;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.4);
+}
+
+.counter {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  //font-size: $font-size-xs;
+  //color: $gray-medium-color;
+}

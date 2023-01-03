@@ -1,0 +1,40 @@
+@import "src/styles";
+
+.container {
+  width: $sidebar-width;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: $spacing-5;
+  background: $gray-lightest-color;
+  color: $textDark;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: $spacing-5;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: $spacing-2;
+  height: 60px;
+
+  img {
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+.button {
+  width: 100%;
+}

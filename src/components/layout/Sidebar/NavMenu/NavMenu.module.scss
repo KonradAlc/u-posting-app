@@ -1,0 +1,7 @@
+@import "src/styles";
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-1;
+}

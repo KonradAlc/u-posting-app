@@ -1,0 +1,12 @@
+@import "src/styles";
+
+.card {
+  //border: 1px solid $gray-lightest-color;
+  padding: $spacing-7;
+  border-radius: $radius-l;
+  list-style: none;
+
+  &__shadow {
+    box-shadow: $shadow-main;
+  }
+}

@@ -1,0 +1,7 @@
+@import 'src/styles';
+
+.wrapper {
+  width: 100%;
+  @include element-flex(column, flex-start, center);
+  gap: 24px;
+}

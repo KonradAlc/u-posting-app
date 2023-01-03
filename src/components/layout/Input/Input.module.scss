@@ -1,0 +1,44 @@
+@import "src/styles";
+
+.input {
+  @include appearance(none);
+  font-family: $main-font;
+  width: 100%;
+  color: $textDark;
+  font-size: $font-size-m;
+  padding: 16px 20px;
+  border-radius: $radius-l;
+  background: $backgraundVariant-color;
+  transition: 0.2s;
+  height: 52px;
+  outline: none;
+
+  &:hover {
+    cursor: text;
+  }
+
+  &:focus {
+    //border-color: $primary-color;
+    box-shadow: $shadow-input-focus;
+  }
+
+  &:disabled {
+    //color: lighten($dark-color, 50%);
+    cursor: not-allowed;
+  }
+
+  &__error {
+    //border-color: $danger-color;
+    //box-shadow: $invalid-input-shadow;
+  }
+}
+
+@include placeholder {
+  font-size: $font-size-m;
+  //color: $gray-color;
+}
+
+.disabled {
+  //@include disabled-ui();
+  //background-color: $disabled-color !important;
+}
