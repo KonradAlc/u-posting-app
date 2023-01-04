@@ -22,7 +22,7 @@ const LoginForm = () => {
 
   return (
     <div className={style.container}>
-      <Input type="text" label="Login" value={username} onChangeText={setUsername} errorMessage={"xd"} />
+      <Input type="text" label="Login" value={username} onChangeText={setUsername} />
       <Input type="password" label="Hasło" value={password} onChangeText={setPassword} />
       <Button className={style.button} onClick={login}>
         Zaloguj się

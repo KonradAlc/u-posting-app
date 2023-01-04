@@ -5,3 +5,8 @@
   flex-direction: column;
   gap: $spacing-6;
 }
+
+.button {
+  //align-self: flex-end;
+  width: fit-content;
+}

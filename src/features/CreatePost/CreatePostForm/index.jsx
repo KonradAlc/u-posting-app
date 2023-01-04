@@ -14,7 +14,7 @@ const CreatePostForm = (props) => {
   return (
     <form className={style.container}>
       <Input type="text" label="Tytuł" value={title} onChangeText={setTitle} />
-      <Textarea label="Treść" value={text} onChangeText={setText} />
+      <Textarea label="Treść" value={text} onChange={setText} />
       <Button className={style.button} onClick={createPostRequest}>
         Utwórz post
       </Button>

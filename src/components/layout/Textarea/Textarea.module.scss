@@ -8,9 +8,11 @@
   padding: 16px 20px;
   background-color: $background-light-color;
   min-height: 180px;
-  max-height: 180px;
+  height: 180px;
+  //max-height: 360px;
   //color: $dark-color;
   font-size: $font-size-m;
+  font-family: $main-font;
   width: 100%;
   //font-family: $main-font;
   border-radius: $radius-m;
