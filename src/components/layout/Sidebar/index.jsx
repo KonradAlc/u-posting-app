@@ -4,7 +4,7 @@ import style from "./Sidebar.module.scss";
 import { useDispatch } from "react-redux";
 import { loginSuccess, logout } from "@/features/auth/authSlice";
 
-import Logo from "@/assets/img/logo.png";
+import Logo from "@/assets/images/logo.png";
 import Button from "../Button";
 import UserMenu from "./UserMenu";
 import NavMenu from "./NavMenu";

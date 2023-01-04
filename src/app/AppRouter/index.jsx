@@ -7,6 +7,7 @@ import ErrorPage from "@/features/NotFoundRoute";
 import Login from "@/features/auth/containers/Login";
 import { ProtectedRoute, PublicOnlyRoute } from "./routes";
 import HomePage from "@/features/HomePage";
+import CreatePost from "@/features/CreatePost";
 
 const RouterComponents = () => (
   <>
@@ -38,6 +39,21 @@ export const router = createBrowserRouter([
             element: (
               <ProtectedRoute>
                 <HomePage />
+              </ProtectedRoute>
+            ),
+          },
+        ],
+      },
+      {
+        path: "/create-post",
+        element: <Page />,
+        errorElement: <ErrorPage />,
+        children: [
+          {
+            path: "/create-post",
+            element: (
+              <ProtectedRoute>
+                <CreatePost />
               </ProtectedRoute>
             ),
           },

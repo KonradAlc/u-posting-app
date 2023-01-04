@@ -1,6 +1,5 @@
 import React, { forwardRef, useState } from "react";
 import classNames from "classnames";
-//import _ from "lodash";
 
 import InputWrapper from "../InputWrapper";
 
@@ -18,7 +17,8 @@ const Input = React.forwardRef((props, ref) => {
     onClick,
     readOnly,
     disabled,
-    showError,
+    required,
+    errorMessage,
     label = "",
     ...rest
   } = props;
@@ -31,7 +31,7 @@ const Input = React.forwardRef((props, ref) => {
   };
 
   const inputClasses = classNames(style.input, className, {
-    [style.input__error]: showError,
+    [style.input__error]: !!errorMessage,
     [style.readOnlyInput]: readOnly,
   });
 
@@ -44,11 +44,15 @@ const Input = React.forwardRef((props, ref) => {
       onChange={onChangeProxy}
       type={type}
       disabled={disabled || readOnly}
-      //{...otherProps}
+      required={required}
     />
   );
 
-  return <InputWrapper label={label}>{input}</InputWrapper>;
+  return (
+    <InputWrapper label={label} errorMessage={errorMessage} required={required}>
+      {input}
+    </InputWrapper>
+  );
 });
 
 export default Input;

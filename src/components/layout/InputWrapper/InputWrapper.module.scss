@@ -1,4 +1,4 @@
-@import 'src/styles';
+@import "src/styles";
 
 .wrapper {
   display: flex;
@@ -24,7 +24,7 @@
 }
 
 .required {
-  //color: $danger-color;
+  color: $error-color;
 }
 
 .descriptionField {
@@ -35,7 +35,7 @@
 
 .errorMessage {
   margin-top: 5px;
-  //color: $danger-color;
+  color: $error-color;
   //font-size: $font-size-xs;
   animation: fadeIn 0.4s;
 }

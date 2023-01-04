@@ -3,7 +3,7 @@ import style from "./UserMenu.module.scss";
 
 import { useSelector } from "react-redux";
 
-import Avatar from "@/assets/img/user-image-placeholder.png";
+import Avatar from "@/assets/images/user-image-placeholder.png";
 
 const UserMenu = (props) => {
   const isAuthenticated = useSelector((state) => state.auth.isAuth);

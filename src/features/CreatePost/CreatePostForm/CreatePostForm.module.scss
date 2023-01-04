@@ -1,0 +1,7 @@
+@import "src/styles";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+}

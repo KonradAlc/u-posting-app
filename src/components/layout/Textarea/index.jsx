@@ -1,14 +1,13 @@
 import React, { Dispatch, SetStateAction } from "react";
-import TextareaAutosize from "react-textarea-autosize";
+//import TextareaAutosize from "react-textarea-autosize";
 import classNames from "classnames";
 //import SimpleReactValidator from "simple-react-validator";
 
-import InputWrapper, { getWrapperProps } from "@/components/layout/InputWrapper";
+import InputWrapper from "@/components/layout/InputWrapper";
 
 import style from "./Textarea.module.scss";
 
 const Textarea = (props) => {
-  const wrapperProps = getWrapperProps(props);
   const {
     className,
     maxLength = 1000,
@@ -21,6 +20,7 @@ const Textarea = (props) => {
     label,
     hideLabel,
     wrapperStyle,
+    errorMessage,
     id,
     ...rest
   } = props;
@@ -32,28 +32,28 @@ const Textarea = (props) => {
   };
 
   const classes = classNames(style.textarea, className, {
-    [style.error]: wrapperProps.hasError,
+    [style.error]: errorMessage,
   });
 
   return (
     <InputWrapper
       validator={validator}
       rule={rule}
-      errorMessage={wrapperProps.errorMessage}
+      errorMessage={errorMessage}
       label={label}
       id={id}
       hideLabel={hideLabel}
       wrapperStyle={wrapperStyle}
     >
       <div className={style.wrapperArea}>
-        <TextareaAutosize
+        <textarea
           className={classes}
           placeholder={placeholder}
           maxLength={maxLength}
           value={value}
           onChange={onChangeProxy}
           {...rest}
-        />
+        ></textarea>
         {isCounting && (
           <p className={style.counter}>
             {value?.length} / {maxLength}

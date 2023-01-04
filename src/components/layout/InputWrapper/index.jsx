@@ -3,7 +3,16 @@ import classNames from "classnames";
 
 import style from "./InputWrapper.module.scss";
 
-const InputWrapper = ({ id, label, description, children, wrapperStyle, hideLabel = false, errorMessage, rule }) => {
+const InputWrapper = ({
+  id,
+  label,
+  description,
+  children,
+  wrapperStyle,
+  hideLabel = false,
+  errorMessage,
+  required = false,
+}) => {
   return (
     <div className={wrapperStyle}>
       {label && (
@@ -16,7 +25,7 @@ const InputWrapper = ({ id, label, description, children, wrapperStyle, hideLabe
             })}
           >
             {label}
-            {rule?.includes("required") && !hideLabel && <span className={style.required}>&nbsp;*</span>}
+            {required && !hideLabel && <span className={style.required}>&nbsp;*</span>}
           </label>
         </div>
       )}

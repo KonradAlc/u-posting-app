@@ -1,4 +1,4 @@
-@import 'src/styles';
+@import "src/styles";
 
 .wrapperArea {
   position: relative;
@@ -6,14 +6,14 @@
 
 .textarea {
   padding: 16px 20px;
-  //background-color: $white-color;
+  background-color: $background-light-color;
   min-height: 180px;
   max-height: 180px;
   //color: $dark-color;
   font-size: $font-size-m;
   width: 100%;
   //font-family: $main-font;
-  //border-radius: $radius-m;
+  border-radius: $radius-m;
   //border: 1px solid $input-border-color;
   resize: vertical;
   transition: border 0.1s, border-color 0.1s;
@@ -23,7 +23,7 @@
   }
 
   &:focus {
-    //border-color: $orange-color;
+    //border-color: $warning-color;
     //box-shadow: $shadow-input-focus;
   }
 
