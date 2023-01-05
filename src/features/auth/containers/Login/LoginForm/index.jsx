@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import style from "./LoginForm.module.scss";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -15,10 +15,6 @@ const LoginForm = () => {
   const login = () => {
     dispatch(loginSuccess("xd"));
   };
-
-  useEffect(() => {
-    console.log({ username, password });
-  }, [username, password]);
 
   return (
     <div className={style.container}>
