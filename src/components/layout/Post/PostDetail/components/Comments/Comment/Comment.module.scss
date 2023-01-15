@@ -1,9 +1,9 @@
 @import "src/styles";
 
-.container {
+.card {
   display: flex;
   flex-direction: column;
-  gap: $spacing-1;
+  gap: $spacing-4;
 }
 
 .header {

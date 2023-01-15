@@ -1,0 +1,41 @@
+@import "src/styles";
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  @include element-flex(column, center, center);
+  gap: $spacing-6;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: $spacing-1;
+  height: 50px;
+  font-size: $font-size-xxl;
+  img {
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.container {
+  max-width: 500px;
+  @include element-flex(column, center, center);
+  gap: $spacing-6;
+}
+
+.button {
+  align-self: center;
+}
+
+.errMessage {
+  color: $error;
+  font-size: $font-size-s;
+  font-weight: $font-medium;
+  text-align: center;
+  border: 2px solid $error;
+  border-radius: $radius-m;
+  padding: 1rem;
+  width: 100%;
+}

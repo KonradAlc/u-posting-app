@@ -1,18 +1,18 @@
 import React from "react";
 import style from "../../auth.module.scss";
-import LoginForm from "./LoginForm";
 import Logo from "@/assets/images/logo.png";
+import RegisterForm from "./RegisterForm";
 
-const Login = () => {
+const Register = () => {
   return (
     <div className={style.wrapper}>
       <div className={style.branding}>
         <img src={Logo} alt="logo" />
         uPosting
       </div>
-      <LoginForm />
+      <RegisterForm />
     </div>
   );
 };
 
-export default Login;
+export default Register;

@@ -10,6 +10,7 @@ export { default as Modal } from "./layout/Modal";
 export { default as Page } from "./layout/Page";
 export { default as ScrollToTop } from "./layout/ScrollToTop";
 export { default as Sidebar } from "./layout/Sidebar";
+export { default as User } from "./layout/User";
 //export { default as Textarea } from "./layout/Textarea";
 //export { default as Toasts } from "./layout/Toasts";
 

@@ -8,6 +8,8 @@ import Login from "@/features/auth/containers/Login";
 import { ProtectedRoute, PublicOnlyRoute } from "./routes";
 import HomePage from "@/features/HomePage";
 import CreatePost from "@/features/CreatePost";
+import Register from "@/features/auth/containers/Register";
+import PostDetail from "@/components/layout/Post/PostDetail";
 
 const RouterComponents = () => (
   <>
@@ -30,6 +32,15 @@ export const router = createBrowserRouter([
         errorElement: <ErrorPage />,
       },
       {
+        path: "/register",
+        element: (
+          <PublicOnlyRoute>
+            <Register />
+          </PublicOnlyRoute>
+        ),
+        errorElement: <ErrorPage />,
+      },
+      {
         path: "/",
         element: <Page />,
         errorElement: <ErrorPage />,
@@ -39,6 +50,21 @@ export const router = createBrowserRouter([
             element: (
               <ProtectedRoute>
                 <HomePage />
+              </ProtectedRoute>
+            ),
+          },
+        ],
+      },
+      {
+        path: "/posts/:id",
+        element: <Page />,
+        //errorElement: <ErrorPage />,
+        children: [
+          {
+            path: "/posts/:id",
+            element: (
+              <ProtectedRoute>
+                <PostDetail />
               </ProtectedRoute>
             ),
           },

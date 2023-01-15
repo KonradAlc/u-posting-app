@@ -1,0 +1,23 @@
+@import "src/styles";
+
+.textarea {
+  height: 6rem;
+  min-height: 6rem;
+  max-height: 6rem;
+}
+
+.card {
+  h3 {
+    margin-bottom: $spacing-6;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+
+  .button {
+    align-self: flex-start;
+  }
+}
