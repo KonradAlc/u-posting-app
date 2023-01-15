@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import Avatar from "@/assets/images/user-image-placeholder.png";
 
 const UserMenu = (props) => {
-  const isAuthenticated = useSelector((state) => state.auth.isAuth);
+  const authUser = useSelector((state) => state.auth);
 
   return (
     <div className={style.container}>
@@ -14,7 +14,7 @@ const UserMenu = (props) => {
         <img src={Avatar} alt="logo" />
       </div>
       <div className={style.userDetails}>
-        <div className={style.userName}>Jan Kowalski</div>
+        <div className={style.userName}>{authUser.username || "Brak nazwy"}</div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ export const PublicOnlyRoute = ({ children }) => {
   const isAuthenticated = useSelector((state) => state.auth.isAuth);
 
   if (isAuthenticated) {
-    return <Navigate to={"/"} replace />;
+    return <Navigate to={"/posts"} replace />;
   }
 
   return children;

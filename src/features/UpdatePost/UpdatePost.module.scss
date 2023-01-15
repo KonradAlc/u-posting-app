@@ -6,6 +6,6 @@
   gap: $spacing-6;
 }
 
-.updateButton {
-  width: fit-content;
+.header {
+  @include element-flex(row, space-between, center);
 }

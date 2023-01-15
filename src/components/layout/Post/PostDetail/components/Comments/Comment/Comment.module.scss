@@ -1,6 +1,7 @@
 @import "src/styles";
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: $spacing-4;
@@ -20,4 +21,17 @@
 
 .content {
   line-height: $line-height-5;
+}
+
+.deleteButton {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
 }

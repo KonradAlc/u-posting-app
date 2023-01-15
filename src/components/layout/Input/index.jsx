@@ -19,6 +19,7 @@ const Input = React.forwardRef((props, ref) => {
     disabled,
     required,
     errorMessage,
+    value,
     label = "",
     ...rest
   } = props;
@@ -41,6 +42,7 @@ const Input = React.forwardRef((props, ref) => {
       ref={ref}
       className={inputClasses}
       placeholder={placeholder}
+      value={value}
       onChange={onChangeProxy}
       type={type}
       disabled={disabled || readOnly}

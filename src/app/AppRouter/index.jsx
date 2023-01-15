@@ -6,10 +6,11 @@ import { Page, ScrollToTop } from "@/components";
 import ErrorPage from "@/features/NotFoundRoute";
 import Login from "@/features/auth/containers/Login";
 import { ProtectedRoute, PublicOnlyRoute } from "./routes";
-import HomePage from "@/features/HomePage";
 import CreatePost from "@/features/CreatePost";
 import Register from "@/features/auth/containers/Register";
 import PostDetail from "@/components/layout/Post/PostDetail";
+import Posts from "@/features/Posts";
+import UpdatePost from "@/features/UpdatePost";
 
 const RouterComponents = () => (
   <>
@@ -41,25 +42,18 @@ export const router = createBrowserRouter([
         errorElement: <ErrorPage />,
       },
       {
-        path: "/",
+        path: "/posts",
         element: <Page />,
         errorElement: <ErrorPage />,
         children: [
           {
-            path: "/",
+            path: "/posts",
             element: (
               <ProtectedRoute>
-                <HomePage />
+                <Posts />
               </ProtectedRoute>
             ),
           },
-        ],
-      },
-      {
-        path: "/posts/:id",
-        element: <Page />,
-        //errorElement: <ErrorPage />,
-        children: [
           {
             path: "/posts/:id",
             element: (
@@ -80,6 +74,21 @@ export const router = createBrowserRouter([
             element: (
               <ProtectedRoute>
                 <CreatePost />
+              </ProtectedRoute>
+            ),
+          },
+        ],
+      },
+      {
+        path: "/update-post/:id",
+        element: <Page />,
+        //errorElement: <ErrorPage />,
+        children: [
+          {
+            path: "/update-post/:id",
+            element: (
+              <ProtectedRoute>
+                <UpdatePost />
               </ProtectedRoute>
             ),
           },

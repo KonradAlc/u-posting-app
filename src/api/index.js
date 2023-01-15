@@ -29,4 +29,10 @@ export const PostsApi = {
   deletePost(id) {
     return ApiClient.delete(PostsRoutes.DELETE_POST.replace(":id", id));
   },
+  createComment(data) {
+    return ApiClient.post(PostsRoutes.CREATE_COMMENT, data);
+  },
+  deleteComment(id) {
+    return ApiClient.delete(PostsRoutes.DELETE_COMMENT.replace(":id", id));
+  },
 };

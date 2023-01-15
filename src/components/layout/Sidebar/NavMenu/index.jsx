@@ -6,7 +6,7 @@ import style from "./NavMenu.module.scss";
 const menu = [
   {
     name: "Blog",
-    path: "/",
+    path: "/posts",
     icon: "blog",
   },
   {

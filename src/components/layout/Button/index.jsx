@@ -21,7 +21,7 @@ const ButtonWrapper = (props) => {
   };
 
   return to ? (
-    <Link className={buttonClasses} style={{ height, width }} onClick={handleOnClick} to={to}>
+    <Link className={buttonClasses} onClick={handleOnClick} to={to}>
       {children}
     </Link>
   ) : (

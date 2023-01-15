@@ -10,4 +10,6 @@ export const PostsRoutes = {
   CREATE_POST: "/posts/",
   UPDATE_POST: "/posts/:id/",
   DELETE_POST: "/posts/:id/",
+  CREATE_COMMENT: "/posts/comments/",
+  DELETE_COMMENT: "/posts/comments/:id/",
 };
