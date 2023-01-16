@@ -19,6 +19,10 @@ const CreatePostForm = (props) => {
       setTitleErr("Tytuł musi mieć conajmniej 3 znaki");
       return false;
     }
+    if (description.lenght >= 1000) {
+      setDescriptionErr("Post nie może mieć więcej niż 1000 znaków");
+      return false;
+    }
     if (description.length < 10) {
       setDescriptionErr("Treść musi mieć conajmniej 10 znaków");
       return false;
