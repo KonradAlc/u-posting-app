@@ -20,4 +20,6 @@
 
 .content {
   line-height: $line-height-5;
+  word-break: break-all;
+  @include limit-lines(3);
 }

@@ -19,7 +19,7 @@ const CreatePostForm = (props) => {
       setTitleErr("Tytuł musi mieć conajmniej 3 znaki");
       return false;
     }
-    if (description.lenght >= 1000) {
+    if (description.length > 10000) {
       setDescriptionErr("Post nie może mieć więcej niż 1000 znaków");
       return false;
     }
@@ -54,7 +54,14 @@ const CreatePostForm = (props) => {
   return !postCreated ? (
     <form className={style.container} onSubmit={handleSubmit}>
       <Input type="text" label="Tytuł" errorMessage={titleErr} value={title} onChangeText={setTitle} />
-      <Textarea label="Treść" errorMessage={descriptionErr} value={description} onChange={setDescription} />
+      <Textarea
+        label="Treść"
+        errorMessage={descriptionErr}
+        value={description}
+        onChange={setDescription}
+        isCounting={true}
+        maxLength={10000}
+      />
       <Button className={style.button} isLoading={isLoading}>
         Utwórz post
       </Button>
