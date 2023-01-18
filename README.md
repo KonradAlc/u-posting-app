@@ -1,4 +1,8 @@
-# U-Posting App
+# U-Posting App [![Netlify Status](https://api.netlify.com/api/v1/badges/556a1624-f25d-45d3-83b9-56f0fd93b689/deploy-status?branch=main)](https://app.netlify.com/sites/uposting/deploys?branch=main)
+
+### Simple fullstack app for creating and sharing posts
+
+---
 
 ## Preview
 
@@ -49,3 +53,9 @@ To run this project locally, follow the steps below:
 - Node
 - Express
 - MySQL
+
+---
+
+## Database Schema
+
+![Database Schema](./images/db_schema.png)
