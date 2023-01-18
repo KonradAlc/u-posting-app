@@ -87,3 +87,11 @@ export const getMyData = (req, res) => {
     return res.status(200).json(data);
   });
 };
+
+export const getMyPosts = (req, res) => {
+  const q = "SELECT * FROM posts WHERE user_id = ?";
+  db.query(q, [req.user.id_user], (err, data) => {
+    if (err) return res.status(500).json(err);
+    return res.status(200).json(data);
+  });
+};

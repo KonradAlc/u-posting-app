@@ -14,6 +14,11 @@ const menu = [
     path: "/create-post",
     icon: "add",
   },
+  {
+    name: "Moje posty",
+    path: "/my-posts",
+    icon: "add",
+  },
 ];
 
 const NavMenu = (props) => {

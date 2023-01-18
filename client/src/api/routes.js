@@ -2,6 +2,7 @@ export const AccountsRoutes = {
   LOGIN: "/auth/login/",
   REGISTER: "/auth/register/",
   GET_USER_DATA: "/auth/me/",
+  GET_USER_POSTS: "/auth/my-posts/",
 };
 
 export const PostsRoutes = {

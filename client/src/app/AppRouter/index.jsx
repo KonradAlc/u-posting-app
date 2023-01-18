@@ -11,6 +11,7 @@ import Register from "@/features/auth/containers/Register";
 import PostDetail from "@/components/layout/Post/PostDetail";
 import Posts from "@/features/Posts";
 import UpdatePost from "@/features/UpdatePost";
+import MyPosts from "@/features/MyPosts";
 
 const RouterComponents = () => (
   <>
@@ -59,6 +60,21 @@ export const router = createBrowserRouter([
             element: (
               <ProtectedRoute>
                 <PostDetail />
+              </ProtectedRoute>
+            ),
+          },
+        ],
+      },
+      {
+        path: "/my-posts",
+        element: <Page />,
+        errorElement: <ErrorPage />,
+        children: [
+          {
+            path: "/my-posts",
+            element: (
+              <ProtectedRoute>
+                <MyPosts />
               </ProtectedRoute>
             ),
           },

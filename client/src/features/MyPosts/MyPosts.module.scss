@@ -1,0 +1,16 @@
+@import "src/styles";
+
+.wrapper {
+  width: 100%;
+  @include element-flex(column, flex-start, center);
+  gap: 24px;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-gap: 24px;
+  width: 100%;
+  .post {
+  }
+}

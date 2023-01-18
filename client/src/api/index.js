@@ -11,6 +11,9 @@ export const AccountsApi = {
   getUserData() {
     return ApiClient.get(AccountsRoutes.GET_USER_DATA);
   },
+  getUserPosts() {
+    return ApiClient.get(AccountsRoutes.GET_USER_POSTS);
+  },
 };
 
 export const PostsApi = {
