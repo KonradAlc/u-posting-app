@@ -33,9 +33,11 @@
   color: $error;
   font-size: $font-size-s;
   font-weight: $font-medium;
-  text-align: center;
+  line-height: $line-height-5;
+  text-align: left;
   border: 2px solid $error;
   border-radius: $radius-m;
   padding: 1rem;
   width: 100%;
+  white-space: pre-wrap;
 }

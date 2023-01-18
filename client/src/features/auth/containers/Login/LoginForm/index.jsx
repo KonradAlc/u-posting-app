@@ -7,6 +7,7 @@ import { loginSuccess } from "@/features/auth/authSlice";
 import { Button, Input } from "@/components";
 import { AccountsApi } from "@/api";
 import { Link } from "react-router-dom";
+import { validate } from "@/utils/validation";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -17,8 +18,26 @@ const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const validateForm = () => {
+    let err = "";
+
+    //err += validate(username, 30, 3, "Nazwa użytkownika", "text");
+    if (!username.length > 0) {
+      err += `• Nazwa użytkownika jest wymagana.`;
+    }
+    if (!password.length > 0) {
+      err += `${err.length > 0 ? "\n" : ""}• Hasło jest wymagane.`;
+    }
+
+    setErrMessage(err);
+
+    return err.length > 0 ? false : true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) return;
 
     const userData = {
       username: username,

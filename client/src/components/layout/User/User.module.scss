@@ -20,4 +20,7 @@
 .userDetails {
   font-size: $font-size-s;
   font-weight: $font-semiBold;
+  .userName {
+    word-break: break-all;
+  }
 }

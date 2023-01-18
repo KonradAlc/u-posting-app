@@ -19,9 +19,14 @@
   }
 }
 
+.title {
+  word-break: break-all;
+}
+
 .content {
   line-height: $line-height-5;
   word-break: break-all;
+  white-space: pre-wrap;
 }
 
 .deleteButton {

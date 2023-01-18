@@ -3,6 +3,7 @@ import style from "../../../auth.module.scss";
 
 import { useDispatch, useSelector } from "react-redux";
 import { loginSuccess } from "@/features/auth/authSlice";
+import { validate } from "@/utils/validation";
 
 import { Button, Input } from "@/components";
 import { AccountsApi } from "@/api";
@@ -13,24 +14,31 @@ const RegisterForm = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [errMessage, setErrMessage] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
-  const validate = () => {
+  const validateForm = () => {
+    let err = "";
+
+    err += validate(username, 30, 3, "Nazwa użytkownika", "text");
+    err += validate(password, 30, 6, "Hasło", "text");
+
     if (password !== repeatPassword) {
-      setErrMessage("Hasła muszą być takie same.");
-      return false;
+      err += `${err.length > 0 ? "\n• " : ""}Hasła muszą być takie same.`;
     }
 
-    return true;
+    setErrMessage(err);
+
+    return err.length > 0 ? false : true;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validate()) return;
+    if (!validateForm()) return;
 
     const userData = {
       username: username,
@@ -40,6 +48,7 @@ const RegisterForm = () => {
     try {
       setIsLoading(true);
       const res = await AccountsApi.postRegister(userData);
+      setSuccess(true);
     } catch (error) {
       if (error?.response?.status === 500) {
         setErrMessage("Wystąpił błąd serwera.");
@@ -52,7 +61,12 @@ const RegisterForm = () => {
     }
   };
 
-  return (
+  return success ? (
+    <div className={style.container}>
+      <h3 className={style.successMessage}>Rejestracja przebiegła pomyślnie!</h3>
+      <Button to="/login">Przjdź do logowania</Button>
+    </div>
+  ) : (
     <form className={style.container} onSubmit={handleSubmit}>
       {errMessage && <div className={style.errMessage}>{errMessage}</div>}
       <Input type="text" name="username" label="Nazwa użytkownika" value={username} onChangeText={setUsername} />

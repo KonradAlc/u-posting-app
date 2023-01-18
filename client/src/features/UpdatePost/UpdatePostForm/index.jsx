@@ -5,6 +5,7 @@ import Textarea from "@/components/layout/Textarea";
 import { PostsApi } from "@/api";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { validate } from "@/utils/validation";
 
 const UpdatePostForm = (props) => {
   const { id } = useParams();
@@ -41,22 +42,27 @@ const UpdatePostForm = (props) => {
     fetchPost();
   }, []);
 
-  const validate = () => {
-    if (title.length < 3) {
-      setTitleErr("Tytuł musi mieć conajmniej 3 znaki");
-      return false;
-    }
-    if (description.length < 10) {
-      setDescriptionErr("Treść musi mieć conajmniej 10 znaków");
-      return false;
+  const validateForm = () => {
+    let err = "";
+
+    const titleValidator = validate(title, 255, 3, "Tytuł", "text");
+    if (titleValidator) {
+      setTitleErr(titleValidator);
+      err += titleValidator;
     }
 
-    return true;
+    const descriptionValidator = validate(description, 2000, 10, "Treść", "text");
+    if (descriptionValidator) {
+      setDescriptionErr(descriptionValidator);
+      err += descriptionValidator;
+    }
+
+    return err.length > 0 ? false : true;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!validate()) return;
+    if (!validateForm()) return;
 
     const data = {
       title: title,
@@ -77,7 +83,13 @@ const UpdatePostForm = (props) => {
   return (
     <form className={style.container} onSubmit={handleSubmit}>
       <Input type="text" label="Tytuł" errorMessage={titleErr} value={title} onChangeText={setTitle} />
-      <Textarea label="Treść" errorMessage={descriptionErr} value={description} onChange={setDescription} />
+      <Textarea
+        label="Treść"
+        errorMessage={descriptionErr}
+        value={description}
+        onChange={setDescription}
+        isCounting={true}
+      />
       <Button className={style.button} isLoading={isLoading}>
         Edytuj post
       </Button>

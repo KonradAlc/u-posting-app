@@ -1,4 +1,4 @@
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, Outlet, RouterProvider } from "react-router-dom";
 
 import { Page, ScrollToTop } from "@/components";
 
@@ -93,6 +93,10 @@ export const router = createBrowserRouter([
             ),
           },
         ],
+      },
+      {
+        path: "*",
+        element: <Navigate to={"/posts"} replace />,
       },
     ],
   },

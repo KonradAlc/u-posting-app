@@ -3,6 +3,7 @@ import style from "./CreatePostForm.module.scss";
 import { Button, Input } from "@/components";
 import Textarea from "@/components/layout/Textarea";
 import { PostsApi } from "@/api";
+import { validate } from "@/utils/validation";
 
 const CreatePostForm = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -14,26 +15,27 @@ const CreatePostForm = (props) => {
   const [titleErr, setTitleErr] = useState("");
   const [descriptionErr, setDescriptionErr] = useState("");
 
-  const validate = () => {
-    if (title.length < 3) {
-      setTitleErr("Tytuł musi mieć conajmniej 3 znaki");
-      return false;
-    }
-    if (description.length > 10000) {
-      setDescriptionErr("Post nie może mieć więcej niż 1000 znaków");
-      return false;
-    }
-    if (description.length < 10) {
-      setDescriptionErr("Treść musi mieć conajmniej 10 znaków");
-      return false;
+  const validateForm = () => {
+    let err = "";
+
+    const titleValidator = validate(title, 255, 3, "Tytuł", "text");
+    if (titleValidator) {
+      setTitleErr(titleValidator);
+      err += titleValidator;
     }
 
-    return true;
+    const descriptionValidator = validate(description, 2000, 10, "Treść", "text");
+    if (descriptionValidator) {
+      setDescriptionErr(descriptionValidator);
+      err += descriptionValidator;
+    }
+
+    return err.length > 0 ? false : true;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!validate()) return;
+    if (!validateForm()) return;
 
     const data = {
       title: title,

@@ -23,10 +23,6 @@ const Content = ({ data = {}, onPostDelete = () => {} }) => {
     }
   };
 
-  useEffect(() => {
-    console.log(modalVisible);
-  }, [modalVisible]);
-
   return (
     data && (
       <>

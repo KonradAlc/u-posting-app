@@ -52,8 +52,11 @@
 
 .counter {
   position: absolute;
-  right: 8px;
-  bottom: 8px;
+  right: 4px;
+  bottom: 4px;
+  padding: 2px 4px;
+  border-radius: $radius-s;
+  background-color: $background-dark-color;
   //font-size: $font-size-xs;
   //color: $gray-medium-color;
 }
