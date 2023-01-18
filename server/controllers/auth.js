@@ -89,9 +89,23 @@ export const getMyData = (req, res) => {
 };
 
 export const getMyPosts = (req, res) => {
-  const q = "SELECT * FROM posts WHERE user_id = ?";
+  const q =
+    "SELECT p.id_post, `username`, `title`, `description`, u.user_img, u.id_user, `created_at` FROM posts p JOIN users u ON u.id_user = p.user_id WHERE p.user_id = ? ORDER BY created_at DESC";
   db.query(q, [req.user.id_user], (err, data) => {
     if (err) return res.status(500).json(err);
-    return res.status(200).json(data);
+
+    const posts = data.map((post) => ({
+      id: post.id_post,
+      title: post.title,
+      description: post.description,
+      created_at: post.created_at,
+      author: {
+        id: post.id_user,
+        username: post.username,
+        user_img: post.user_img,
+      },
+    }));
+
+    return res.status(200).json(posts);
   });
 };
