@@ -24,19 +24,9 @@
     cursor: text;
   }
 
-  &:focus {
-    //border-color: $warning-color;
-    //box-shadow: $shadow-input-focus;
-  }
-
   &:disabled {
     //color: lighten($dark-color, 50%);
     cursor: not-allowed;
-  }
-
-  &__error {
-    //border-color: $danger-color;
-    //box-shadow: $invalid-input-shadow;
   }
 }
 
