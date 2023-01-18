@@ -12,6 +12,9 @@
 
 ## Installation guide
 
+To run this project locally, follow the steps below:
+
+- Install [Node.js](https://nodejs.org/en/)
 - Clone the repository to your local machine
 - For Frontend Development
   - Go to frontend directory `cd client`
